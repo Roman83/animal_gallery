@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script src="AnimalsData.js"></script>
+    <script src="script.js"></script>
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-3 nav"></div>
+        <div class="col-xs-12 col-sm-9 content"></div>
+      </div>
+    </div>
+
+    <script id="list-template" type="text/x-handlebars-template">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          
+          <ul class="nav nav-pills nav-stacked">
+            {{#each category}}
+            <li class="nav-group" data-id="{{@index}}">
+              <h1>{{name}}</h1>
+            </li>
+            {{#each animals}}
+            <li data-id="{{@index}}"><a class="nav-item" href="#" data-id="{{@index}}">{{name}}</a></li>
+            {{/each}}
+            {{/each}}
+          </ul>
+        </div>
+      </nav>
+    </script>
+    
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{name}}</h1>
+        <img class="img-thumb" alt="" width="100px" src="{{image1}}"/>
+        <img class="img-thumb" alt="" width="100px" src="{{image2}}"/>
+        <div class="body">
+          {{description}}
+        </div>
+      </div>
+    </script>
+
+    <script id="modal-template" type="text/x-handlebars-template">
+      <div class="modal-dialog"  style="width:800">
+        <div class="modal-content">
+          <div class="modal-body" data-dismiss="modal">
+              <img style="width:100%" src="{{src}}"/>
+          </div>
+        </div>
+      </div>
+    </script> 
+
+    <div id="myModal" class="modal fade" role="dialog">
+      
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "animal_gallery",
+  "version": "0.0.1",
+  "description": "simple gallery written for educational purposes using bootstrap, jquery, and handlebars",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Tolstopyatov",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "handlebars": "^4.0.11",
+    "jquery": "^3.2.1"
+  }
+}
