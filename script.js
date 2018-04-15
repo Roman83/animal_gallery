@@ -19,10 +19,6 @@ function showItem(event) {
     var catId = $($(this).parent().prevAll('.nav-group')[0]).data("id");
     var elemId = $(this).data("id");
 
-    console.log(catId);
-    console.log(elemId);
-    console.log(this);
-
     var html = template(animals_data.category[catId].animals[elemId]);
 
     $('.content').html(html);
@@ -47,4 +43,9 @@ function showModal(event) {
 }
 
 $( document ).ready(showNav);
-    
+
+$( document ).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+        $(this).collapse('hide');
+    }
+});  

@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8"/>
-    <title>Document</title>
+    <title>Animal Gallery</title>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
@@ -20,25 +21,37 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-xs-12 col-sm-3 nav"></div>
-        <div class="col-xs-12 col-sm-9 content"></div>
+        <div class="col-xs-12 col-sm-4 col-lg-3 nav"></div>
+        <div class="col-xs-12 col-sm-8 col-lg-9 content"></div>
       </div>
     </div>
 
     <script id="list-template" type="text/x-handlebars-template">
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default" id="navbar">
+        
         <div class="container-fluid">
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand">Animal gallery</span>
+          </div>
           
-          <ul class="nav nav-pills nav-stacked">
-            {{#each category}}
-            <li class="nav-group" data-id="{{@index}}">
-              <h1>{{name}}</h1>
-            </li>
-            {{#each animals}}
-            <li data-id="{{@index}}"><a class="nav-item" href="#" data-id="{{@index}}">{{name}}</a></li>
-            {{/each}}
-            {{/each}}
-          </ul>
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav nav-pills nav-stacked">
+              {{#each category}}
+              <li class="nav-group" data-id="{{@index}}">
+                <h1>{{name}}</h1>
+              </li>
+              {{#each animals}}
+              <li data-id="{{@index}}"><a class="nav-item" href="#" data-id="{{@index}}">{{name}}</a></li>
+              {{/each}}
+              {{/each}}
+            </ul>
+          </div>
         </div>
       </nav>
     </script>
